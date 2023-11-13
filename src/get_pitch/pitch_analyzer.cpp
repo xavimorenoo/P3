@@ -1,6 +1,7 @@
 /// @file
 
 #include <iostream>
+#include <fstream>
 #include <math.h>
 #include "pitch_analyzer.h"
 
