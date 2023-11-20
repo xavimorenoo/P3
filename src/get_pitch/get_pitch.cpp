@@ -59,8 +59,9 @@ int main(int argc, const char *argv[]) {
         "2.0");  // version string
         //El docopt devuelve un mapa.
 
-	std::string input_wav = args["<input-wav>"].asString();
-	std::string output_txt = args["<output-txt>"].asString();
+	  std::string input_wav = args["<input-wav>"].asString();
+	  std::string output_txt = args["<output-txt>"].asString();
+    
   float umaxnorm = stof(args["--umaxnorm"].asString()); // Siempre accedemos con la key larga.
   float r1norm = stof(args["--r1norm"].asString());
   float cclip1 = stof(args["--cclip1"].asString());

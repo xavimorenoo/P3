@@ -13,11 +13,11 @@ namespace upc {
 
     for (unsigned int l = 0; l < r.size(); ++l) {
   		/// \TODO Compute the autocorrelation r[l]
-      /** \FET
-       * Implementem 
-       * - Inicialitzem...
-       * - Acumulem...
-       * - Dividim... 
+      /** \DONE
+       * We implement Autocorrelation
+       * - We initialized to 0...
+       * - Acumulated for all the signal...
+       * - Divided by length... 
        * */
       r[l] = 0;
       for(unsigned int n = 0; n < x.size()-l; n++){
@@ -79,8 +79,22 @@ namespace upc {
   }
 
   float PitchAnalyzer::compute_pitch(vector<float> & x) const {
+    //Calculate autoccorrelation
     if (x.size() != frameLen)
       return -1.0F;
+
+    //Frame center-clipping
+    float max = *std::max_element(x.begin(), x.end());
+    for(int i = 0; i < (int)x.size(); i++) {
+      if(abs(x[i]) < cclip) {
+        x[i] = 0.0F;
+      }
+    }
+
+    //Frame normalization
+    max = *std::max_element(x.begin(), x.end());
+    for (int i = 0; i < (int)x.size(); i++)
+      x[i] /= max;
 
     //Window input frame
     for (unsigned int i=0; i<x.size(); ++i)
@@ -117,14 +131,14 @@ namespace upc {
     //You can print these (and other) features, look at them using wavesurfer
     //Based on that, implement a rule for unvoiced
     //change to #if 1 and compile
-#if 0
+#if 0 //This 'if 0' is used to see the values of the autocorrelation. If we put if 1 we will see the values on the screen
     if (r[0] > 0.0F)
       cout << pot << '\t' << r[1]/r[0] << '\t' << r[lag]/r[0] << endl;
 #endif
     
     if (unvoiced(pot, r[1]/r[0], r[lag]/r[0]))
-      return 0;
+      return 0; //Unvoiced frame
     else
-      return (float) samplingFreq/(float) lag;
+      return (float) samplingFreq/(float) lag; //If it is voiced, the pitch frequency of the maximum of the autocorrelation is returned
   }
 }

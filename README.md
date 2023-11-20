@@ -1,5 +1,7 @@
 PAV - P3: estimación de pitch
 =============================
+Raquel Galisteo y Xavier Moreno
+-------------------------------
 
 Esta práctica se distribuye a través del repositorio GitHub [Práctica 3](https://github.com/albino-pav/P3).
 Siga las instrucciones de la [Práctica 2](https://github.com/albino-pav/P2) para realizar un `fork` de la
@@ -17,16 +19,15 @@ Ejercicios básicos
 
    ```bash
    for (unsigned int l = 0; l < r.size(); ++l) {
-    r[l] = 0;
-   for (unsigned int n = l; n < x.size(); n++){
-    r[l] += x[n]*x[n-l];
+      r[l] = 0;
+      for(unsigned int n = 0; n < x.size()-l; n++){
+        r[l] += x[n]*x[n+l];
+      }
+      r[l] /= x.size();
     }
-   r[l] /= x.size();
-   }
 
-  if (r[0] == 0.0F) //to avoid log() and divide zero 
-        r[0] = 1e-10; 
-   }
+    if (r[0] == 0.0F) //to avoid log() and divide zero 
+      r[0] = 1e-10; 
     ```
 
    * Inserte una gŕafica donde, en un *subplot*, se vea con claridad la señal temporal de un segmento de
@@ -36,22 +37,26 @@ Ejercicios básicos
 	 NOTA: es más que probable que tenga que usar Python, Octave/MATLAB u otro programa semejante para
 	 hacerlo. Se valorará la utilización de la biblioteca matplotlib de Python.
 
-   FALTA
+   FALTAA
 
    * Determine el mejor candidato para el periodo de pitch localizando el primer máximo secundario de la
      autocorrelación. Inserte a continuación el código correspondiente.
 
-     FALTAAA
+     __Como se puede observar en la imagen anterior, el mejor candidato para el periodo de pitch es 4.8125ms. Este valor puede localizarse perfectamente en ambos dominios, ya que, en la gráfica temporal, se aprecia claramente que cada periodo ocupa aproximadamente 5s, y en el dominio de la autocorrelación se distingue claramente el máximo, obteniendo así el valor del mejor candidato para el periodo de pitch. El código necessario para obtener estos resultados lo hemos realizado con Python y es el mostrado a continuación:__
+
+     ```bash
+     FALTAA
+     ```
 
   
    * Implemente la regla de decisión sonoro o sordo e inserte el código correspondiente.
 
-   __La regla de decisión se basa en 3 parámetros: la autocorrelación, la relación R(1)/R(0) y el valor de la potencia__
+     __La regla de decisión sonoroo sordo se basa en 3 parámetros: la autocorrelación, la relación R(1)/R(0) y el valor de la potencia. El código correspondiente se muestsra a continuación:__
 
-   ```bash
-   if(rmaxnorm>umaxnorm && r1norm > r1thr && pot > powthr) return false;
-  return true;
-   ```
+     ```bash
+     if(rmaxnorm>umaxnorm && r1norm > r1thr && pot > powthr) return false;
+     return true;
+     ```
 
    * Puede serle útil seguir las instrucciones contenidas en el documento adjunto `código.pdf`.
 
