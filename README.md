@@ -42,7 +42,7 @@ Ejercicios básicos
    * Determine el mejor candidato para el periodo de pitch localizando el primer máximo secundario de la
      autocorrelación. Inserte a continuación el código correspondiente.
 
-     __Como se puede observar en la imagen anterior, el mejor candidato para el periodo de pitch es 4.8125ms. Este valor puede localizarse perfectamente en ambos dominios, ya que, en la gráfica temporal, se aprecia claramente que cada periodo ocupa aproximadamente 5s, y en el dominio de la autocorrelación se distingue claramente el máximo, obteniendo así el valor del mejor candidato para el periodo de pitch. El código necessario para obtener estos resultados lo hemos realizado con Python y es el mostrado a continuación:__
+     __Como se puede observar en la imagen anterior, el mejor candidato para el periodo de pitch es de FALTAA. Este valor puede localizarse perfectamente en ambos dominios, ya que, en la gráfica temporal, se aprecia claramente que cada periodo ocupa aproximadamente FALTAA, y en el dominio de la autocorrelación se distingue claramente el máximo, obteniendo así el valor del mejor candidato para el periodo de pitch. El código necessario para obtener estos resultados lo hemos realizado con FALTAA y es el mostrado a continuación:__
 
      ```bash
      FALTAA
@@ -51,7 +51,7 @@ Ejercicios básicos
   
    * Implemente la regla de decisión sonoro o sordo e inserte el código correspondiente.
 
-     __La regla de decisión sonoroo sordo se basa en 3 parámetros: la autocorrelación, la relación R(1)/R(0) y el valor de la potencia. El código correspondiente se muestsra a continuación:__
+     __La regla de decisión sonoro o sordo se basa en 3 parámetros: la autocorrelación, la relación R(1)/R(0) y el valor de la potencia. El código correspondiente se muestsra a continuación:__
 
      ```bash
      if(rmaxnorm>umaxnorm && r1norm > r1thr && pot > powthr) return false;
@@ -76,6 +76,8 @@ Ejercicios básicos
 	    Recuerde configurar los paneles de datos para que el desplazamiento de ventana sea el adecuado, que
 		en esta práctica es de 15 ms.
 
+     
+
       - Use el estimador de pitch implementado en el programa `wavesurfer` en una señal de prueba y compare
 	    su resultado con el obtenido por la mejor versión de su propio sistema.  Inserte una gráfica
 		ilustrativa del resultado de ambos estimadores.
@@ -99,6 +101,8 @@ Ejercicios de ampliación
 
   * Inserte un *pantallazo* en el que se vea el mensaje de ayuda del programa y un ejemplo de utilización
     con los argumentos añadidos.
+
+    <img src="img/get_pitch_ayuda.png" align="center">
 
 - Implemente las técnicas que considere oportunas para optimizar las prestaciones del sistema de estimación
   de pitch.
