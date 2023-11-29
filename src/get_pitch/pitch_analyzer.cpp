@@ -114,7 +114,7 @@ namespace upc {
 	///    - The lag corresponding to the maximum value of the pitch.
     ///	   .
 	/// In either case, the lag should not exceed that of the minimum value of the pitch.
-  for(iR = iRMax =  r.begin() + npitch_min; iR < r.begin() + npitch_max; iR++){ // The maximum has to be located between the minimum and maximum pitch, so it is a reasonable value.
+    for(iR = iRMax =  r.begin() + npitch_min; iR < r.begin() + npitch_max; iR++){ // The maximum has to be located between the minimum and maximum pitch, so it is a reasonable value.
       // begin() is used to return an iterator pointing to the first element of the vector container
       if(*iR > * iRMax) iRMax = iR; //Localizamos el máximo --> Se actualiza iRMax si el valor concreto que se está estudiando en ese momento es mayor.
     }
