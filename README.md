@@ -105,8 +105,10 @@ Ejercicios básicos
 
 	    Recuerde configurar los paneles de datos para que el desplazamiento de ventana sea el adecuado, que
 		en esta práctica es de 15 ms.
-<img src="img/analisis.png" align="center">
-     
+
+     <img src="img/analisis.png" align="center">  
+
+     __Las gráficas hacen referencia a: nivel de potencia de la señal (r[0]), autocorrelación normalizada de uno (r1norm = r[1] / r[0]), valor de la autocorrelación en su máximo secundario (rmaxnorm = r[lag] / r[0]) y estimador de pitch implementado en el programa wavesurfer, respectivamente.__   
 
       - Use el estimador de pitch implementado en el programa `wavesurfer` en una señal de prueba y compare
 	    su resultado con el obtenido por la mejor versión de su propio sistema.  Inserte una gráfica
